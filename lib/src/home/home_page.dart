@@ -1,6 +1,8 @@
-import 'package:Bid365/src/home/widgets/custom_drawer.dart';
-import 'package:Bid365/src/home/widgets/task_card.dart';
+
+import 'package:bid365/src/home/widgets/custom_drawer.dart';
+import 'package:bid365/src/home/widgets/task_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 import 'package:realm/realm.dart';
 
@@ -20,7 +22,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       drawer: const CustomDrawer(),
       appBar: AppBar(
-        title: const Text('Lista'),
+        title: const Text('Leilão Bid365'),
         actions: const [
           Padding(
             padding: EdgeInsets.only(right: 8),
@@ -42,13 +44,13 @@ class _HomePageState extends State<HomePage> {
               itemBuilder: (_, index) {
                 final board = TasBoard(
                   Uuid.v4(),
-                  'Nova Lista de Tarefas',
-                  // tasks: [
-                  //   TaskModel(Uuid.v4(), '', completed: true),
-                  //   TaskModel(Uuid.v4(), '', completed: true),
-                  //   TaskModel(Uuid.v4(), '', completed: true),
-                  //   TaskModel(Uuid.v4(), '', completed: true),
-                  // ],
+                  'Raça Nelore',
+                  tasks: [
+                    TaskModel(Uuid.v4(), '', completed: true),
+                    TaskModel(Uuid.v4(), '', completed: true),
+                    TaskModel(Uuid.v4(), '', completed: true),
+                    TaskModel(Uuid.v4(), '', completed: true),
+                  ],
                 );
                 return TaskCard(
                   board: board,
@@ -68,22 +70,18 @@ class _HomePageState extends State<HomePage> {
                   segments: const [
                     ButtonSegment(
                       value: 0,
-                      label: Text('Todos'),
+                      label: Text('A leiloar'),
                     ),
                     ButtonSegment(
                       value: 1,
-                      label: Text('Pendentes'),
+                      label: Text('Ao Vivo'),
                     ),
                     ButtonSegment(
                       value: 2,
-                      label: Text('Conluídas'),
-                    ),
-                    ButtonSegment(
-                      value: 3,
-                      label: Text('Desativados'),
+                      label: Text('Vendidos'),
                     ),
                   ],
-                  selected: const {3},
+                  selected: const {2},
                   onSelectionChanged: (values) {},
                 ),
               ),
