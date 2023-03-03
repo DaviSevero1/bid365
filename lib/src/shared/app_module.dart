@@ -11,7 +11,7 @@ import '../home/home_module.dart';
 class AppModule extends Module {
   @override
   List<Bind> get binds => [
-        //Bind.instance<Realm>(Realm(config)),
+        Bind.instance<Realm>(Realm(config)),
         AutoBind.factory<ConfigurationService>(ConfigurationServiceImpl.new),
         AutoBind.singleton(AppStore.new) 
       ];
