@@ -8,7 +8,7 @@ class RegisterModule extends Module {
 
    @override
    final List<ModularRoute> routes = [
-    ChildRoute(Modular.initialRoute, child: (context, args) => const RegisterPage())
+    ChildRoute('/register', child: (context, args) => const RegisterPage())
    ];
 
 }

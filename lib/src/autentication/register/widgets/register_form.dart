@@ -95,10 +95,9 @@ class _RegisterFormState extends State<_RegisterForm> {
         ),
         ElevatedButton(
           onPressed: () {
-            Navigator.of(context)
-                .pushNamed('./'); //Acertar para voltar uma tela
+            Navigator.of(context).pop('./login'); //Acertar para voltar uma tela
           },
-          child: Text('Entrar'),
+          child: Text('Cadastrar'),
           style: ElevatedButton.styleFrom(
               backgroundColor: Color.fromARGB(255, 2, 67, 121),
               fixedSize: Size(300, 50)),

@@ -66,7 +66,7 @@ class _LoginFormState extends State<_LoginForm> {
           ),
           ElevatedButton(
             onPressed: () {
-              Navigator.of(context).pushNamed('./home');
+              Navigator.of(context).pushNamed('/login/home');
             },
             child: Text('Entrar'),
             style: ElevatedButton.styleFrom(

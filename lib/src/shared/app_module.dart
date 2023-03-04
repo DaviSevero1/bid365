@@ -1,4 +1,4 @@
-import 'package:bid365/src/autentication/login/login_page.dart';
+import 'package:bid365/src/autentication/login/login_module.dart';
 import 'package:bid365/src/shared/services/realm/realm_config.dart';
 import 'package:bid365/src/shared/stores/app_store.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -13,13 +13,14 @@ class AppModule extends Module {
   List<Bind> get binds => [
         Bind.instance<Realm>(Realm(config)),
         AutoBind.factory<ConfigurationService>(ConfigurationServiceImpl.new),
-        AutoBind.singleton(AppStore.new) 
+        AutoBind.singleton(AppStore.new)
       ];
 
   @override
   List<ModularRoute> get routes => [
-        
-        ModuleRoute('/home', module: HomeModule()),
-        ChildRoute('/config', child: (context, args) => const ConfigPage())
+        //ModuleRoute('/home', module: HomeModule()),
+        ModuleRoute('/login', module: LoginModule()),
+        //ChildRoute('/', child: (context, args) => const LoginPage()),
+        ChildRoute('/config', child: (context, args) => const ConfigPage()),
       ];
 }

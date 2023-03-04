@@ -7,7 +7,7 @@ class _ButtonRegister extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () {
-        Navigator.pushNamed(context, './register');
+        Navigator.pushNamed(context, '/login/register');
       },
       child: Text('Cadastre-se'),
       style: TextButton.styleFrom(

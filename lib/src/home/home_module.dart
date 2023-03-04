@@ -8,8 +8,8 @@ import 'home_page.dart';
 class HomeModule extends Module {
   @override
   List<ModularRoute> get routes => [
-        ChildRoute('/', child: (context, args) => const LoginPage()),
-        ModuleRoute('/', module: RegisterModule()),
+        //ChildRoute('/', child: (context, args) => const LoginPage()),
+        //ModuleRoute('/', module: RegisterModule()),
         ChildRoute('/home', child: (context, args) => const HomePage()),
         ChildRoute('/edit', child: (context, args) => const EditTaskBoardPage())
       ];

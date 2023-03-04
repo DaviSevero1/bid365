@@ -1,4 +1,3 @@
-
 import 'package:bid365/src/home/widgets/custom_drawer.dart';
 import 'package:bid365/src/home/widgets/task_card.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +38,7 @@ class _HomePageState extends State<HomePage> {
                 right: 40,
                 bottom: 200,
               ),
-              itemCount: 100,
+              itemCount: 30,
               itemBuilder: (_, index) {
                 final board = TasBoard(
                   Uuid.v4(),
@@ -57,7 +56,7 @@ class _HomePageState extends State<HomePage> {
               },
               separatorBuilder: (context, index) {
                 return const SizedBox(
-                  height: 10,
+                  height: 20,
                 );
               },
             ),
@@ -87,13 +86,6 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton.extended(
-        icon: const Icon(Icons.edit),
-        label: const Text('Nova Lista'),
-        onPressed: () {
-          Navigator.of(context).pushNamed('./edit');
-        },
       ),
     );
   }
