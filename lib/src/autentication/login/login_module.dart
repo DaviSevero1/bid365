@@ -1,7 +1,6 @@
 import 'package:bid365/src/autentication/login/login_page.dart';
 import 'package:bid365/src/home/home_module.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-
 import '../register/register_module.dart';
 
 class LoginModule extends Module {

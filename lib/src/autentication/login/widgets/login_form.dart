@@ -8,9 +8,15 @@ class _LoginForm extends StatefulWidget {
 }
 
 class _LoginFormState extends State<_LoginForm> {
+  final _tLogin = TextEditingController();
+  final _tSenha = TextEditingController();
+
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: _formKey,
       child: Column(
         children: [
           Container(
@@ -18,6 +24,8 @@ class _LoginFormState extends State<_LoginForm> {
                 borderRadius: BorderRadius.circular(8),
                 border: Border.all(color: Colors.grey)),
             child: TextFormField(
+              controller: _tLogin,
+              keyboardType: TextInputType.text,
               textAlign: TextAlign.start,
               textAlignVertical: TextAlignVertical.top,
               style: const TextStyle(fontSize: 18),
@@ -44,6 +52,8 @@ class _LoginFormState extends State<_LoginForm> {
                 borderRadius: BorderRadius.circular(8),
                 border: Border.all(color: Colors.grey)),
             child: TextFormField(
+              controller: _tSenha,
+              keyboardType: TextInputType.text,
               style: const TextStyle(fontSize: 18),
               decoration: InputDecoration(
                 border: InputBorder.none,
@@ -66,7 +76,7 @@ class _LoginFormState extends State<_LoginForm> {
           ),
           ElevatedButton(
             onPressed: () {
-              Navigator.of(context).pushNamed('/login/home');
+              _onClickLogin(context);
             },
             child: Text('Entrar'),
             style: ElevatedButton.styleFrom(
@@ -77,4 +87,21 @@ class _LoginFormState extends State<_LoginForm> {
       ),
     );
   }
+
+  _onClickLogin(BuildContext context) async {
+    final login = _tLogin.text;
+    final senha = _tSenha.text;
+    print('Login: $login, Senha: $senha');
+    if (!_formKey.currentState!.validate()) {
+      return;
+    }
+    var response = await LoginApi.login(login, senha);
+    if (response == true) {
+      Navigator.of(context).pushNamed('/login/home');
+    } else {
+      alert(context, "Login ou Senha Inválida");
+    }
+  }
 }
+   
+

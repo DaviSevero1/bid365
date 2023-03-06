@@ -89,78 +89,94 @@ class TaskCard extends StatelessWidget {
 
     return GestureDetector(
       onTap: () {
-        print('Clicou');
         Navigator.of(context).pushNamed('./edit');
       },
-      child: Container(
-        height: 130,
-        decoration: BoxDecoration(
-            color: backgroundColor,
-            borderRadius: BorderRadius.circular(14),
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
-                  spreadRadius: 2,
-                  blurRadius: 5,
-                  offset: Offset(0, 3))
-            ]),
-        padding: const EdgeInsets.symmetric(vertical: 13, horizontal: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Icon(
-                  iconData,
-                  color: iconColors,
-                ),
-                const Spacer(),
-                Text(
-                  statusText,
-                  style: theme.textTheme.titleSmall?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
+      child: Stack(children: [
+        Container(
+          height: 130,
+          decoration: BoxDecoration(
+              color: backgroundColor,
+              borderRadius: BorderRadius.circular(14),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 2,
+                    blurRadius: 5,
+                    offset: Offset(0, 3))
+              ]),
+          padding: const EdgeInsets.symmetric(vertical: 13, horizontal: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Icon(
+                    iconData,
                     color: iconColors,
                   ),
-                ),
-              ],
-            ),
-            const Spacer(),
-            Text(
-              title,
-              style: theme.textTheme.titleLarge?.copyWith(
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-                color: theme.colorScheme.primary,
-              ),
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            if (board.tasks.isNotEmpty)
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  LinearProgressIndicator(
-                    value: progress,
-                    color: color,
-                  ),
-                  const SizedBox(
-                    height: 3,
-                  ),
+                  const Spacer(),
                   Text(
-                    progressText,
-                    style: theme.textTheme.bodySmall?.copyWith(
+                    statusText,
+                    style: theme.textTheme.titleSmall?.copyWith(
                       fontWeight: FontWeight.bold,
-                      color: theme.textTheme.bodySmall?.color?.withOpacity(0.5),
+                      fontSize: 16,
+                      color: iconColors,
                     ),
                   ),
                 ],
               ),
-          ],
+              const Spacer(),
+              Text(
+                title,
+                style: theme.textTheme.titleLarge?.copyWith(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color: theme.colorScheme.primary,
+                ),
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              if (board.tasks.isNotEmpty)
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    LinearProgressIndicator(
+                      value: progress,
+                      color: color,
+                    ),
+                    const SizedBox(
+                      height: 3,
+                    ),
+                    Text(
+                      progressText,
+                      style: theme.textTheme.bodySmall?.copyWith(
+                        fontWeight: FontWeight.bold,
+                        color:
+                            theme.textTheme.bodySmall?.color?.withOpacity(0.5),
+                      ),
+                    ),
+                  ],
+                ),
+            ],
+          ),
         ),
-      ),
+        Positioned(
+          left: 30,
+          top: 30,
+          child: Container(
+            width: 50,
+            height: 50,
+            decoration: BoxDecoration(
+                // image: DecorationImage(
+                //   image: AssetImage('/a'),
+                //   fit: BoxFit.cover,
+                //),
+                ),
+          ),
+        ),
+      ]),
     );
   }
 }
