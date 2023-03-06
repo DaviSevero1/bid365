@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-alert(BuildContext context, String msg) {
+alertPassword(BuildContext context, String msg) {
   showDialog(
       context: context,
       builder: (context) {
@@ -16,6 +16,7 @@ alert(BuildContext context, String msg) {
               child: Text(
                 'Ok',
                 style: TextStyle(color: Colors.black, fontSize: 20),
+                
               ),
             ),
           ],

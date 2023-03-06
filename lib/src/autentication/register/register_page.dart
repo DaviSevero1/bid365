@@ -1,4 +1,8 @@
+import 'package:bid365/src/autentication/register/register_api.dart';
+import 'package:bid365/src/autentication/register/widgets/alertPassword.dart';
 import 'package:flutter/material.dart';
+
+import '../login/widgets/alert.dart';
 part 'widgets/register_form.dart';
 
 class RegisterPage extends StatelessWidget {
@@ -16,7 +20,7 @@ class RegisterPage extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(
-              height: 150,
+              height: 110,
             ),
             Column(),
             _RegisterForm()
