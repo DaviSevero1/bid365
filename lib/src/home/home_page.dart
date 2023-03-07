@@ -34,8 +34,8 @@ class _HomePageState extends State<HomePage> {
             ListView.separated(
               padding: const EdgeInsets.only(
                 top: 70,
-                left: 40,
-                right: 40,
+                left: 30,
+                right: 30,
                 bottom: 200,
               ),
               itemCount: 30,

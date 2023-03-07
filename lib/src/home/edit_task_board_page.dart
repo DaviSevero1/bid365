@@ -25,6 +25,13 @@ class _EditTaskBoardPageState extends State<EditTaskBoardPage> {
               color: Colors.blueGrey,
               borderRadius: BorderRadius.circular(20),
             ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.asset(
+                "assets/vaca.jpg",
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
           const SizedBox(
             height: 10,
@@ -46,7 +53,7 @@ class _EditTaskBoardPageState extends State<EditTaskBoardPage> {
             ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+            padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
             alignment: Alignment.center,
             child: Column(
               children: [
