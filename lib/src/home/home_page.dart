@@ -78,28 +78,22 @@ class _HomePageState extends State<HomePage> {
                     },
                   ),
                   Align(
-                    alignment: Alignment.topCenter,
+                    alignment: Alignment.bottomCenter,
                     child: Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: SegmentedButton<int>(
-                        segments: const [
-                          ButtonSegment(
-                            value: 0,
-                            label: Text('A leiloar'),
-                          ),
-                          ButtonSegment(
-                            value: 1,
-                            label: Text('Ao Vivo'),
-                          ),
-                          ButtonSegment(
-                            value: 2,
-                            label: Text('Vendidos'),
-                          ),
-                        ],
-                        selected: const {1},
-                        onSelectionChanged: (values) {},
-                      ),
-                    ),
+                        padding: const EdgeInsets.only(
+                            bottom: 150, top: 400, right: 10, left: 30),
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: 5,
+                          itemBuilder: (BuildContext context, int index) {
+                            return Card(
+                              child: Container(
+                                width: 130,
+                                child: Text('Teste'),
+                              ),
+                            );
+                          },
+                        )),
                   ),
                 ],
               ),
