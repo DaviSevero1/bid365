@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+
+import 'leiloes_api/leiloes_api.dart';
 
 class EditTaskBoardPage extends StatefulWidget {
   const EditTaskBoardPage({Key? key}) : super(key: key);
@@ -11,6 +14,7 @@ class _EditTaskBoardPageState extends State<EditTaskBoardPage> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+
 
     return Scaffold(
       appBar: AppBar(
@@ -27,7 +31,7 @@ class _EditTaskBoardPageState extends State<EditTaskBoardPage> {
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
-              child: Image.asset(
+              child: Image.network(
                 "assets/vaca.jpg",
                 fit: BoxFit.cover,
               ),

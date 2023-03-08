@@ -1,5 +1,6 @@
 import 'package:bid365/src/home/leiloes_api/leiloes_api.dart';
 import 'package:bid365/src/home/leiloes_api/model_leiloes.dart';
+import 'package:bid365/src/home/models/leilao.dart';
 import 'package:bid365/src/home/widgets/custom_drawer.dart';
 import 'package:bid365/src/home/widgets/task_card.dart';
 import 'package:flutter/material.dart';
@@ -49,16 +50,22 @@ class _HomePageState extends State<HomePage> {
                       bottom: 200,
                     ),
                     itemCount: leilao.length,
-                    itemBuilder: (_, index) {
+                    itemBuilder: (Leilao, index) {
+                      final leilaoItem = leilao[index];
+
+                      // final tasks = leilaoItem.tasks.map((task)){
+                      //   return TaskModel(Uuid.v4(), task.nome)
+                      // }
+                      // final teste = leilaoItem.;
                       final board = TasBoard(
                         Uuid.v4(),
-                        'Raça Nelore',
-                        tasks: [
-                          TaskModel(Uuid.v4(), '', completed: true),
-                          TaskModel(Uuid.v4(), '', completed: true),
-                          TaskModel(Uuid.v4(), '', completed: true),
-                          TaskModel(Uuid.v4(), '', completed: true),
-                        ],
+                        leilaoItem.name,
+                        // tasks: [
+                        //   TaskModel(Uuid.v4(), '', completed: true),
+                        //   TaskModel(Uuid.v4(), '', completed: true),
+                        //   TaskModel(Uuid.v4(), '', completed: true),
+                        //   TaskModel(Uuid.v4(), '', completed: true),
+                        // ],
                       );
                       return TaskCard(
                         board: board,
@@ -99,8 +106,15 @@ class _HomePageState extends State<HomePage> {
             ),
           );
         } else {
-          return Container(
-            child: Text('Erro ao carregar leilões'),
+          return Scaffold(
+            body: Center(
+              child: FutureBuilder(
+                future: Future.delayed(Duration(seconds: 3)),
+                builder: (BuildContext context, AsyncSnapshot snapshot) {
+                  return Text("Carregando...");
+                },
+              ),
+            ),
           );
         }
       },
