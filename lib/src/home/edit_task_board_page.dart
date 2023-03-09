@@ -15,7 +15,6 @@ class _EditTaskBoardPageState extends State<EditTaskBoardPage> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Leilão BID365'),
@@ -31,7 +30,7 @@ class _EditTaskBoardPageState extends State<EditTaskBoardPage> {
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
-              child: Image.network(
+              child: Image.asset(
                 "assets/vaca.jpg",
                 fit: BoxFit.cover,
               ),

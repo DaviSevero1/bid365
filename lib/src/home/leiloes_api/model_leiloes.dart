@@ -38,12 +38,12 @@ class ModelLeiloes {
     return ModelLeiloes(
       id: map['id'] as int,
       name: map['name'] as String,
-      date: map['date'] as String,
-      time: map['time'] as String,
-      is_online: map['is_online'] as int,
-      image: map['image'] as String,
-      phone: map['phone'] as String,
-      city: map['city'] as String,
+      date: map['date']  ?? '',
+      time: map['time'] ?? '',
+      is_online: map['is_online'] ?? 0,
+      image: map['image'] ?? '',
+      phone: map['phone'] ?? '',
+      city: map['city'] ?? '',
     );
   }
 

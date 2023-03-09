@@ -1,4 +1,0 @@
-class Leilao {
-  int? id;
-  
-}

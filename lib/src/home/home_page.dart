@@ -1,8 +1,10 @@
 import 'package:bid365/src/home/leiloes_api/leiloes_api.dart';
 import 'package:bid365/src/home/leiloes_api/model_leiloes.dart';
-import 'package:bid365/src/home/models/leilao.dart';
+import 'package:bid365/src/home/models/model_lotes.dart';
+import 'package:bid365/src/home/models/lotes_api.dart';
 import 'package:bid365/src/home/widgets/custom_drawer.dart';
 import 'package:bid365/src/home/widgets/task_card.dart';
+import 'package:bid365/src/home/widgets/view_lotes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -20,6 +22,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final getAll = Modular.get<Leilao_api>();
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<ModelLeiloes>>(
@@ -77,23 +80,10 @@ class _HomePageState extends State<HomePage> {
                       );
                     },
                   ),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Padding(
-                        padding: const EdgeInsets.only(
-                            bottom: 150, top: 400, right: 10, left: 30),
-                        child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: 5,
-                          itemBuilder: (BuildContext context, int index) {
-                            return Card(
-                              child: Container(
-                                width: 130,
-                                child: Text('Teste'),
-                              ),
-                            );
-                          },
-                        )),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        bottom: 100, top: 400, right: 30, left: 30),
+                    child: ViewLotes(),
                   ),
                 ],
               ),

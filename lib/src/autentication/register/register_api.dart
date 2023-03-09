@@ -14,8 +14,8 @@ class RegisteApi {
 
     var response = await http.post(url, headers: header, body: _body);
 
-    print('Response status: ${response.statusCode}');
-    print('Response body: ${response.body}');
+    //print('Response status: ${response.statusCode}');
+    //print('Response body: ${response.body}');
     if (response.statusCode == 200) { //Obs: O status de resposta, geralmente, deveria voltar como 201, pois ele retorna Ok + novo recurso 
       return true;
     }
