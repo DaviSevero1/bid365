@@ -14,6 +14,9 @@ class _EditTaskBoardPageState extends State<EditTaskBoardPage> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final getAll = Modular.get<Leilao_api>();
+    
+
 
     return Scaffold(
       appBar: AppBar(

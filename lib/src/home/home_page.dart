@@ -56,19 +56,11 @@ class _HomePageState extends State<HomePage> {
                     itemBuilder: (Leilao, index) {
                       final leilaoItem = leilao[index];
 
-                      // final tasks = leilaoItem.tasks.map((task)){
-                      //   return TaskModel(Uuid.v4(), task.nome)
-                      // }
-                      // final teste = leilaoItem.;
+
                       final board = TasBoard(
                         Uuid.v4(),
                         leilaoItem.name,
-                        // tasks: [
-                        //   TaskModel(Uuid.v4(), '', completed: true),
-                        //   TaskModel(Uuid.v4(), '', completed: true),
-                        //   TaskModel(Uuid.v4(), '', completed: true),
-                        //   TaskModel(Uuid.v4(), '', completed: true),
-                        // ],
+  
                       );
                       return TaskCard(
                         board: board,
@@ -80,11 +72,11 @@ class _HomePageState extends State<HomePage> {
                       );
                     },
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        bottom: 100, top: 400, right: 30, left: 30),
-                    child: ViewLotes(),
-                  ),
+                  // Padding(
+                  //   padding: const EdgeInsets.only(
+                  //       bottom: 100, top: 400, right: 30, left: 30),
+                  //   child: ViewLotes(),
+                  // ),
                 ],
               ),
             ),

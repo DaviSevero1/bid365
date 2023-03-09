@@ -22,20 +22,23 @@ class _ViewLotesState extends State<ViewLotes> {
             final lote = snapshot.data!;
             return ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: 5,
+              itemCount: lote.length,
               itemBuilder: (BuildContext context, int index) {
+                final loteItem = lote[index];
+                final imagemId = lote[index].images[index];
+
                 return GestureDetector(
                   onTap: () {
                     Navigator.of(context).pushNamed('./edit');
                   },
                   child: Card(
                     child: Container(
-                      width: 130,
+                      width: 140,
                       height: 170,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20),
-                        child: Image.asset(
-                          "assets/vaca.jpg",
+                        child: Image.network(
+                          imagemId.url,
                           fit: BoxFit.cover,
                         ),
                       ),

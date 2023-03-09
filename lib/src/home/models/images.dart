@@ -17,7 +17,7 @@ class Images {
     return <String, dynamic>{
       'id': id,
       'created_at': created_at,
-      'url': url,
+      'file_url': url,
       'filename': filename,
     };
   }
@@ -26,7 +26,7 @@ class Images {
     return Images(
       id: map['id'] as int,
       created_at: map['created_at'] as String,
-      url: map['url'] ?? '',
+      url: map['file_url'] ?? '',
       filename: map['filename'] as String,
     );
   }
