@@ -1,3 +1,4 @@
+import 'package:bid365/src/home/leiloes_api/model_leiloes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -17,8 +18,9 @@ enum TaskCardStatus {
 
 class TaskCard extends StatefulWidget {
   final TasBoard board;
+  final ModelLeiloes leilao;
 
-  const TaskCard({super.key, required this.board});
+  const TaskCard({super.key, required this.board, required this.leilao});
 
   @override
   State<TaskCard> createState() => _TaskCardState();
@@ -89,11 +91,17 @@ class _TaskCardState extends State<TaskCard> {
     final progressText = getProgressText(widget.board.tasks);
     final title = widget.board.title;
     final status = getStatus(widget.board, progress);
-    final statusText = status.text;
     final backgroundColor = getBackgroundColor(status, theme);
     final color = getColor(status, theme);
     final iconData = status.icon;
     final iconColors = iconColor(status);
+    final statuss;
+
+    if (widget.leilao.is_online == 1) {
+      statuss = 'Ao Vivo';
+    } else {
+      statuss = 'A Leiloar';                              
+    }
 
     return GestureDetector(
       child: Stack(
@@ -148,7 +156,7 @@ class _TaskCardState extends State<TaskCard> {
                         Row(
                           children: [
                             Text(
-                              statusText,
+                              statuss,
                               style: theme.textTheme.titleSmall?.copyWith(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16,
@@ -206,8 +214,9 @@ class _TaskCardState extends State<TaskCard> {
         ],
       ),
       onTap: () {
-        //Navigator.of(context).pushNamed('./edit');
-        Modular.to.navigate('./edit', arguments: Leilao_api());
+        Navigator.of(context)
+            .pushNamed('./edit', arguments: widget.leilao);
+        
       },
     );
   }

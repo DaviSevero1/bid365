@@ -64,6 +64,7 @@ class _HomePageState extends State<HomePage> {
                       );
                       return TaskCard(
                         board: board,
+                        leilao: leilaoItem,
                       );
                     },
                     separatorBuilder: (context, index) {

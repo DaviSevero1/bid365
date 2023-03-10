@@ -1,10 +1,9 @@
+import 'package:bid365/src/home/leiloes_api/model_leiloes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-
-import 'leiloes_api/leiloes_api.dart';
 
 class EditTaskBoardPage extends StatefulWidget {
-  const EditTaskBoardPage({Key? key}) : super(key: key);
+  final ModelLeiloes leilao;
+  const EditTaskBoardPage({Key? key, required this.leilao}) : super(key: key);
 
   @override
   State<EditTaskBoardPage> createState() => _EditTaskBoardPageState();
@@ -14,13 +13,12 @@ class _EditTaskBoardPageState extends State<EditTaskBoardPage> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final getAll = Modular.get<Leilao_api>();
-    
-
+    // final Leilao_api leilao =
+    //     ModalRoute.of(context)!.settings.arguments as Leilao_api;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Leilão BID365'),
+        title: Text(widget.leilao.city), //Pera ae
       ),
       body: Column(
         children: [
@@ -79,7 +77,22 @@ class _EditTaskBoardPageState extends State<EditTaskBoardPage> {
                           ]),
                       width: 130,
                       height: 130,
-                      child: Text('Telefone'),
+                      child: Padding(
+                        padding: const EdgeInsets.all(12),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('Data', style: TextStyle(fontSize: 17)),
+                            Spacer(),
+                            Icon(Icons.date_range_rounded),
+                            Spacer(),
+                            Text(
+                              widget.leilao.date,
+                              style: TextStyle(fontSize: 14),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                     const SizedBox(
                       width: 30,
@@ -98,7 +111,7 @@ class _EditTaskBoardPageState extends State<EditTaskBoardPage> {
                           ]),
                       width: 130,
                       height: 130,
-                      child: Text('Goianésia - GO'),
+                      child: Text(widget.leilao.time),
                     ),
                   ],
                 ),
@@ -121,7 +134,7 @@ class _EditTaskBoardPageState extends State<EditTaskBoardPage> {
                           ]),
                       width: 130,
                       height: 130,
-                      child: Text('KG'),
+                      child: Text(widget.leilao.city),
                     ),
                     const SizedBox(
                       width: 30,
@@ -140,7 +153,7 @@ class _EditTaskBoardPageState extends State<EditTaskBoardPage> {
                           ]),
                       width: 130,
                       height: 130,
-                      child: Text('12/02 : 16:00'),
+                      child: Text(widget.leilao.phone),
                     ),
                   ],
                 ),

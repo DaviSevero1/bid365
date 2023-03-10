@@ -9,6 +9,7 @@ class HomeModule extends Module {
   @override
   List<ModularRoute> get routes => [
         ChildRoute('/home', child: (context, args) => const HomePage()),
-        ChildRoute('/edit', child: (context, args) => const EditTaskBoardPage())
+        ChildRoute('/edit',
+            child: (context, args) => EditTaskBoardPage(leilao: args.data))
       ];
 }
