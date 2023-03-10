@@ -10,13 +10,14 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login'),
-      ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(15),
         child: Column(
           children: [
+            SizedBox(
+              height: 80,
+            ),
+            Image.asset('assets/icone.png'),
             SizedBox(
               height: 150,
             ),

@@ -18,10 +18,17 @@ class _EditTaskBoardPageState extends State<EditTaskBoardPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.leilao.city), //Pera ae
+        //Image.asset('assets/'),
+        title: Image.asset(
+          'assets/icone.png',
+          width: 150,
+        ), //Pera ae
       ),
       body: Column(
         children: [
+          const SizedBox(
+            height: 20,
+          ),
           Container(
             height: 240,
             width: 350,

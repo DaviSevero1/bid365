@@ -199,7 +199,7 @@ class _RegisterFormState extends State<_RegisterForm> {
       phone,
     );
     if (response == true) {
-      Navigator.of(context).pushNamed('/login/home');
+      Navigator.of(context).pushNamed('/login');
       alert(context, 'Usuário cadastrado com sucesso!');
     } else {
       alert(context, "Login ja cadastrado, por favor tente novamente");

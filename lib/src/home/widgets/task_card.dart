@@ -7,7 +7,7 @@ import '../leiloes_api/leiloes_api.dart';
 
 enum TaskCardStatus {
   live(Icons.adjust_sharp, 'Ao Vivo'),
-  completed(Icons.check, 'Vendido'),
+  completed(Icons.pending_actions, 'Vendido'),
   scheduled(Icons.pending_actions, 'A Leiloar');
 
   final IconData icon;
@@ -44,7 +44,7 @@ class _TaskCardState extends State<TaskCard> {
   TaskCardStatus getStatus(TasBoard board, double progress) {
     if (!board.enable) {
       return TaskCardStatus.completed;
-    } else if (progress < 1.0) {
+    } else if (widget.leilao.is_online < 1.0) {
       return TaskCardStatus.completed;
     } else {
       return TaskCardStatus.live;
@@ -100,7 +100,7 @@ class _TaskCardState extends State<TaskCard> {
     if (widget.leilao.is_online == 1) {
       statuss = 'Ao Vivo';
     } else {
-      statuss = 'A Leiloar';                              
+      statuss = 'A Leiloar';
     }
 
     return GestureDetector(
@@ -142,7 +142,7 @@ class _TaskCardState extends State<TaskCard> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20),
                       child: Image.asset(
-                        "assets/vaca.jpg",
+                        "assets/teste.jpg",
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -172,38 +172,46 @@ class _TaskCardState extends State<TaskCard> {
                         ),
                         const Spacer(),
                         Text(
-                          title,
+                          widget.leilao.auctionhouse,
                           style: theme.textTheme.titleLarge?.copyWith(
                             fontWeight: FontWeight.bold,
                             fontSize: 15,
                             color: theme.colorScheme.onBackground,
                           ),
                         ),
-                        const SizedBox(
-                          height: 8,
-                        ),
-                        if (widget.board.tasks.isNotEmpty)
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              LinearProgressIndicator(
-                                value: progress,
-                                color: color,
-                              ),
-                              const SizedBox(
-                                height: 3,
-                              ),
-                              Text(
-                                progressText,
-                                style: theme.textTheme.bodySmall?.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                  color: theme.textTheme.bodySmall?.color
-                                      ?.withOpacity(0.5),
-                                ),
-                              ),
-                            ],
+                        const Spacer(),
+
+                        Text(
+                          widget.leilao.name,
+                          style: theme.textTheme.titleLarge?.copyWith(
+                            fontWeight: FontWeight.w300,
+                            fontSize: 12,
+                            color: theme.colorScheme.onBackground,
                           ),
+                        ),
+
+                        // if (widget.board.tasks.isNotEmpty)
+                        //   Column(
+                        //     crossAxisAlignment: CrossAxisAlignment.start,
+                        //     mainAxisSize: MainAxisSize.min,
+                        //     children: [
+                        //       LinearProgressIndicator(
+                        //         value: progress,
+                        //         color: color,
+                        //       ),
+                        //       const SizedBox(
+                        //         height: 3,
+                        //       ),
+                        //       Text(
+                        //         progressText,
+                        //         style: theme.textTheme.bodySmall?.copyWith(
+                        //           fontWeight: FontWeight.bold,
+                        //           color: theme.textTheme.bodySmall?.color
+                        //               ?.withOpacity(0.5),
+                        //         ),
+                        //       ),
+                        //     ],
+                        //   ),
                       ],
                     ),
                   ),
@@ -214,9 +222,7 @@ class _TaskCardState extends State<TaskCard> {
         ],
       ),
       onTap: () {
-        Navigator.of(context)
-            .pushNamed('./edit', arguments: widget.leilao);
-        
+        Navigator.of(context).pushNamed('./edit', arguments: widget.leilao);
       },
     );
   }

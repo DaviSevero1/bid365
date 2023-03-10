@@ -34,7 +34,10 @@ class _HomePageState extends State<HomePage> {
           return Scaffold(
             drawer: const CustomDrawer(),
             appBar: AppBar(
-              title: const Text('Leilão Bid365'),
+              title: Image.asset(
+                'assets/icone.png',
+                width: 130,
+              ),
               actions: const [
                 Padding(
                   padding: EdgeInsets.only(right: 8),
@@ -56,11 +59,9 @@ class _HomePageState extends State<HomePage> {
                     itemBuilder: (Leilao, index) {
                       final leilaoItem = leilao[index];
 
-
                       final board = TasBoard(
                         Uuid.v4(),
                         leilaoItem.name,
-  
                       );
                       return TaskCard(
                         board: board,

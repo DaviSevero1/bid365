@@ -7,7 +7,8 @@ ThemeData get lightTheme => ThemeData(
       colorScheme: _lightColorScheme,
       appBarTheme: AppBarTheme(
         centerTitle: true,
-        backgroundColor: _lightColorScheme.primary,
+        backgroundColor: Color.fromARGB(255, 20, 20, 20),
+        iconTheme: IconThemeData(color: Colors.white),
       ),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
         backgroundColor: _lightColorScheme.tertiary,
@@ -24,7 +25,6 @@ ThemeData get dartTheme => ThemeData(
         backgroundColor: _darkColorScheme.primaryContainer,
       ),
       segmentedButtonTheme: _segmentedButtonTheme,
-      
     );
 
 SegmentedButtonThemeData get _segmentedButtonTheme => SegmentedButtonThemeData(

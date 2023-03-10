@@ -11,16 +11,17 @@ class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Cadastrar Usuário'),
-      ),
       body: SingleChildScrollView(
           child: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(
           children: [
             const SizedBox(
-              height: 110,
+              height: 50,
+            ),
+            Image.asset('assets/icone.png'),
+            const SizedBox(
+              height: 50,
             ),
             Column(),
             _RegisterForm()
