@@ -96,6 +96,7 @@ class _TaskCardState extends State<TaskCard> {
     final iconData = status.icon;
     final iconColors = iconColor(status);
     final statuss;
+    final linkUrl = widget.leilao.contents.first;
 
     if (widget.leilao.is_online == 1) {
       statuss = 'Ao Vivo';
@@ -141,9 +142,10 @@ class _TaskCardState extends State<TaskCard> {
                     height: 120,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20),
-                      child: Image.asset(
-                        "assets/teste.jpg",
+                      child: Image.network(
+                        linkUrl.url,
                         fit: BoxFit.cover,
+                        alignment: Alignment.centerRight,
                       ),
                     ),
                   ),

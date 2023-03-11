@@ -1,6 +1,4 @@
 import 'dart:convert';
-
-import 'package:bid365/src/home/leiloes_api/model_leiloes.dart';
 import 'package:bid365/src/home/models/model_lotes.dart';
 import 'package:http/http.dart' as http;
 
@@ -19,6 +17,7 @@ class Lotes_api {
       print(data);
 
       return data['data'].map<ModelLotes>((p) => ModelLotes.fromMap(p)).toList();
+      
     } else {
       throw Exception('Falha ao buscar lotes');
     }

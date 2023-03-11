@@ -74,11 +74,6 @@ class _HomePageState extends State<HomePage> {
                       );
                     },
                   ),
-                  // Padding(
-                  //   padding: const EdgeInsets.only(
-                  //       bottom: 100, top: 400, right: 30, left: 30),
-                  //   child: ViewLotes(),
-                  // ),
                 ],
               ),
             ),
