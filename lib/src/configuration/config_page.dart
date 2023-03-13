@@ -19,27 +19,26 @@ class _ConfigPageState extends State<ConfigPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Configurações'),
+        title: const Text(
+          'Configurações',
+          style: TextStyle(color: Colors.white),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.only(
           top: 20,
-          left: 16,
+          left: 20,
           right: 16,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Configurações',
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
             const SizedBox(
               height: 20,
             ),
             Text(
               'Tema',
-              style: Theme.of(context).textTheme.titleSmall,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
             const SizedBox(
               height: 10,
@@ -63,19 +62,9 @@ class _ConfigPageState extends State<ConfigPage> {
               onChanged: appStore.changeThemeMode,
             ),
             const SizedBox(
-              height: 10,
+              height: 20,
             ),
-            Text(
-              'Controle de dados',
-              style: Theme.of(context).textTheme.titleSmall,
-            ),
-            const SizedBox(
-              height: 25,
-            ),
-            OutlinedButton(
-              onPressed: appStore.deleteApp,
-              child: const Text('Apagar cache e reiniciar'),
-            )
+            Text('Versão: 1.0.0'),
           ],
         ),
       ),

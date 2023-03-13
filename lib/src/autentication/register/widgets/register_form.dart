@@ -167,8 +167,6 @@ class _RegisterFormState extends State<_RegisterForm> {
             ElevatedButton(
               onPressed: () {
                 if (_tSenha.text == _tConfirmaSenha.text) {
-                  // Navigator.of(context)
-                  //     .pop('./login'); //Acertar para voltar uma tela
                   _onClickRegister(context);
                 } else {
                   alertPassword(context, "As senhas não coincidem");

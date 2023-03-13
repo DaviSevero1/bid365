@@ -9,14 +9,13 @@ class RegisteApi {
       "Content-Type": "application/json"
     };
 
-    Map params = {"email": user, "password": password, "name" : name, "phone": phone};// Ao logar com a api usamos a chave "username",
-    var _body = jsonEncode(params);                                                   // e para criar estamos passando "email", por que disso?
+    Map params = {"email": user, "password": password, "name" : name, "phone": phone};
+    var _body = jsonEncode(params);             
 
     var response = await http.post(url, headers: header, body: _body);
 
-    //print('Response status: ${response.statusCode}');
-    //print('Response body: ${response.body}');
-    if (response.statusCode == 200) { //Obs: O status de resposta, geralmente, deveria voltar como 201, pois ele retorna Ok + novo recurso 
+   
+    if (response.statusCode == 200) {
       return true;
     }
     return false;

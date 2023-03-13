@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 import '../../configuration/services/configuration_service.dart';
 
 class AppStore {
@@ -29,17 +28,7 @@ class AppStore {
   void changeThemeMode(ThemeMode? mode) {
     if (mode != null) {
       themeMode.value = mode;
-      //save();
     }
-  }
-
-  void setSyncDate(DateTime date) {
-    syncDate.value = date;
-    save();
-  }
-
-  void deleteApp() {
-    _configurationService.deleteAll();
   }
 
   ThemeMode _getThemeModeByName(String name) {

@@ -12,10 +12,7 @@ class Leilao_api {
     };
     var response = await http.get(url, headers: header);
     if (response.statusCode == 200) {
-      //print('Response status: ${response.statusCode}');
-      print(response.body);
       var data = jsonDecode(response.body);
-      //print(data);
 
       return data['data']
           .map<ModelLeiloes>((p) => ModelLeiloes.fromMap(p))

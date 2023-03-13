@@ -9,7 +9,6 @@ class LoginModule extends Module {
         ModuleRoute('/', module: HomeModule()),
         ModuleRoute('/', module: RegisterModule()),
         ChildRoute('/', child: (context, args) => const LoginPage()),
-        //ChildRoute('/home', child: (context, args) => const HomePage()),
-        //ChildRoute('/edit', child: (context, args) => const EditTaskBoardPage())
+        
       ];
 }
