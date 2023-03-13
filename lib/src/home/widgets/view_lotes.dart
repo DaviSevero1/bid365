@@ -1,8 +1,8 @@
-import 'package:bid365/src/home/models/model_lotes.dart';
+import 'package:bid365/src/home/lotes_api/model_lotes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-import '../models/lotes_api.dart';
+import '../lotes_api/lotes_api.dart';
 
 class ViewLotes extends StatefulWidget {
   const ViewLotes({Key? key}) : super(key: key);

@@ -1,7 +1,7 @@
 import 'package:bid365/src/home/leiloes_api/leiloes_api.dart';
 import 'package:bid365/src/home/leiloes_api/model_leiloes.dart';
-import 'package:bid365/src/home/models/model_lotes.dart';
-import 'package:bid365/src/home/models/lotes_api.dart';
+import 'package:bid365/src/home/lotes_api/model_lotes.dart';
+import 'package:bid365/src/home/lotes_api/lotes_api.dart';
 import 'package:bid365/src/home/widgets/custom_drawer.dart';
 import 'package:bid365/src/home/widgets/task_card.dart';
 import 'package:bid365/src/home/widgets/view_lotes.dart';

@@ -1,7 +1,7 @@
 import 'package:bid365/src/autentication/login/login_module.dart';
 import 'package:bid365/src/home/leiloes_api/leiloes_api.dart';
-import 'package:bid365/src/home/models/model_lotes.dart';
-import 'package:bid365/src/home/models/lotes_api.dart';
+import 'package:bid365/src/home/lotes_api/model_lotes.dart';
+import 'package:bid365/src/home/lotes_api/lotes_api.dart';
 import 'package:bid365/src/shared/services/realm/realm_config.dart';
 import 'package:bid365/src/shared/stores/app_store.dart';
 import 'package:flutter_modular/flutter_modular.dart';

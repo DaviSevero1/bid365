@@ -190,30 +190,7 @@ class _TaskCardState extends State<TaskCard> {
                             fontSize: 12,
                             color: theme.colorScheme.onBackground,
                           ),
-                        ),
-
-                        // if (widget.board.tasks.isNotEmpty)
-                        //   Column(
-                        //     crossAxisAlignment: CrossAxisAlignment.start,
-                        //     mainAxisSize: MainAxisSize.min,
-                        //     children: [
-                        //       LinearProgressIndicator(
-                        //         value: progress,
-                        //         color: color,
-                        //       ),
-                        //       const SizedBox(
-                        //         height: 3,
-                        //       ),
-                        //       Text(
-                        //         progressText,
-                        //         style: theme.textTheme.bodySmall?.copyWith(
-                        //           fontWeight: FontWeight.bold,
-                        //           color: theme.textTheme.bodySmall?.color
-                        //               ?.withOpacity(0.5),
-                        //         ),
-                        //       ),
-                        //     ],
-                        //   ),
+                        ),                    
                       ],
                     ),
                   ),

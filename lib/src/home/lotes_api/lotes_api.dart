@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:bid365/src/home/models/model_lotes.dart';
+import 'package:bid365/src/home/lotes_api/model_lotes.dart';
 import 'package:http/http.dart' as http;
 
 class Lotes_api {

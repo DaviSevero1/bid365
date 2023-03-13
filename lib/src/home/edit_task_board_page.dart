@@ -142,7 +142,7 @@ class _EditTaskBoardPageState extends State<EditTaskBoardPage> {
                               children: [
                                 Icon(Icons.access_time),
                                 const SizedBox(
-                                  width: 10,
+                                  width: 6,
                                 ),
                                 Text('Horário'),
                               ],
