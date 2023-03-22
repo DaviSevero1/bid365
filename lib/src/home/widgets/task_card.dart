@@ -108,7 +108,7 @@ class _TaskCardState extends State<TaskCard> {
       child: Stack(
         children: [
           Align(
-            alignment: Alignment.centerRight,
+            alignment: Alignment.center,
             child: Container(
               height: 145,
               width: 325,
@@ -123,7 +123,7 @@ class _TaskCardState extends State<TaskCard> {
                       offset: Offset(0, 3),
                     )
                   ]),
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+              padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
               child: Row(
                 children: [
                   Container(
@@ -139,7 +139,7 @@ class _TaskCardState extends State<TaskCard> {
                           )
                         ]),
                     width: 100,
-                    height: 120,
+                    height: 110,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20),
                       child: Image.network(
@@ -149,50 +149,59 @@ class _TaskCardState extends State<TaskCard> {
                       ),
                     ),
                   ),
-                  Container(
-                    padding: EdgeInsets.fromLTRB(10, 2, 4, 2),
-                    width: 205,
-                    height: 120,
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              statuss,
-                              style: theme.textTheme.titleSmall?.copyWith(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
-                                color: iconColors,
-                              ),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.fromLTRB(8, 2, 2, 2),
+                            width: 200,
+                            height: 120,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      statuss,
+                                      style:
+                                          theme.textTheme.titleSmall?.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16,
+                                        color: iconColors,
+                                      ),
+                                    ),
+                                    Icon(
+                                      iconData,
+                                      color: iconColors,
+                                    ),
+                                  ],
+                                ),
+                                Text(
+                                  widget.leilao.auctionhouse,
+                                  style: theme.textTheme.titleLarge?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15,
+                                    color: theme.colorScheme.onBackground,
+                                  ),
+                                ),
+                                Text(
+                                  widget.leilao.name,
+                                  style: theme.textTheme.titleLarge?.copyWith(
+                                    fontWeight: FontWeight.w300,
+                                    fontSize: 12,
+                                    color: theme.colorScheme.onBackground,
+                                  ),
+                                ),
+                              ],
                             ),
-                            const Spacer(),
-                            Icon(
-                              iconData,
-                              color: iconColors,
-                            ),
-                          ],
-                        ),
-                        const Spacer(),
-                        Text(
-                          widget.leilao.auctionhouse,
-                          style: theme.textTheme.titleLarge?.copyWith(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                            color: theme.colorScheme.onBackground,
                           ),
-                        ),
-                        const Spacer(),
-
-                        Text(
-                          widget.leilao.name,
-                          style: theme.textTheme.titleLarge?.copyWith(
-                            fontWeight: FontWeight.w300,
-                            fontSize: 12,
-                            color: theme.colorScheme.onBackground,
-                          ),
-                        ),                    
-                      ],
-                    ),
+                        ],
+                      ),
+                    ],
                   ),
                 ],
               ),

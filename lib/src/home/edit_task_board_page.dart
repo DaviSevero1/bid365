@@ -62,11 +62,14 @@ class _EditTaskBoardPageState extends State<EditTaskBoardPage> {
             ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
+            //padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
             alignment: Alignment.center,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Container(
                       alignment: AlignmentDirectional.center,
@@ -115,9 +118,9 @@ class _EditTaskBoardPageState extends State<EditTaskBoardPage> {
                         ],
                       ),
                     ),
-                    const SizedBox(
-                      width: 30,
-                    ),
+                    //const SizedBox(
+                    //width: 30,
+                    //),
                     Container(
                       width: 130,
                       height: 130,
@@ -172,6 +175,7 @@ class _EditTaskBoardPageState extends State<EditTaskBoardPage> {
                   height: 30,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Container(
                       alignment: AlignmentDirectional.center,
@@ -219,9 +223,6 @@ class _EditTaskBoardPageState extends State<EditTaskBoardPage> {
                           ),
                         ],
                       ),
-                    ),
-                    const SizedBox(
-                      width: 30,
                     ),
                     Container(
                       width: 130,
